@@ -1,0 +1,13 @@
+[project]
+name = "aatra-ai-agent"
+version = "1.0.0"
+description = "Aatra AI Agent: a tool-using AI support agent (demo client: Nimbus) with knowledge base, backend operations, history and feedback."
+requires-python = ">=3.12"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
+
+[tool.ruff]
+line-length = 120
+target-version = "py312"

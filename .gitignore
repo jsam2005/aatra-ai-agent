@@ -1,0 +1,31 @@
+# secrets
+.env
+.env.*
+!.env.example
+
+# python
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+.ruff_cache/
+.coverage
+
+# node / frontend
+node_modules/
+frontend/dist/
+frontend/.vite/
+
+# local data and logs (sample data is recreated by scripts/seed.py)
+*.db
+*.db-wal
+*.db-shm
+*.log
+
+# editors / OS
+.DS_Store
+.idea/
+.vscode/
+
+# assignment brief (not ours to redistribute)
+Aatra-AI-Engineering-Assignment.pdf
