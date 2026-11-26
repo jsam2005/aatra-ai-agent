@@ -1,0 +1,65 @@
+{
+  "summary": {
+    "provider": "gemini",
+    "model": "gemini-3.5-flash-lite",
+    "cases": 2,
+    "passed": 2,
+    "failed": 0,
+    "errors": {},
+    "route_accuracy": 1.0,
+    "tool_accuracy": 1.0,
+    "security_pass_rate": null,
+    "latency_ms": {
+      "mean": 4510,
+      "median": 4510,
+      "p95": null
+    },
+    "model_calls": 6,
+    "input_tokens": 8230,
+    "output_tokens": 168
+  },
+  "results": [
+    {
+      "id": "pay-none",
+      "category": "payment",
+      "error": null,
+      "passed": true,
+      "checks": {
+        "route": true,
+        "tools": true,
+        "contains_any": true,
+        "effect:pending_actions": true
+      },
+      "route": "backend_read",
+      "tools": [
+        "get_payment_issue"
+      ],
+      "citations": [],
+      "text": "I've checked your account, and I'm happy to let you know that all your invoices are fully paid and there are no failed or unpaid payments right now [list_invoices]. Is there a particular invoice or charge you were wondering about?",
+      "latency_ms": 3329,
+      "model_calls": 2,
+      "input_tokens": 2664,
+      "output_tokens": 63
+    },
+    {
+      "id": "conv-followup",
+      "category": "conversation",
+      "error": null,
+      "passed": true,
+      "checks": {
+        "route": true,
+        "renewal_date": true
+      },
+      "route": "backend_read",
+      "tools": [
+        "get_subscription"
+      ],
+      "citations": [],
+      "text": "Your subscription automatically renews at the end of your current billing period on 2026-11-30.",
+      "latency_ms": 5690,
+      "model_calls": 4,
+      "input_tokens": 5566,
+      "output_tokens": 105
+    }
+  ]
+}
